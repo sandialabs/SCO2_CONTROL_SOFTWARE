@@ -1,0 +1,66 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+
+This format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+
+This project adheres to [Semantic Versioning](http://semver.org/)
+
+This file uses Markdown format from [Daring Fireball](http://daringfireball.net/projects/markdown/)
+
+## [TODO]
+These items are planned for future versions but not yet completed.
+### Added
+- Closed-loop control of the KAPL heater for PHX inlet temperature stability
+- Closed-loop control of the PHX and pump flow rates to automate valve positions
+- Operating limit lines to pump performance map plots (surce, sonic, others?)
+- Software valve interlock to avoid head-heading the pump?
+### Changed
+- The process flow diagram to reflect piping changes?
+- Architecture to allow headless operation?
+### Deprecated
+- 
+### Removed
+- 
+### Fixed
+- Fix scaling for heater power
+- Trend plot redraw error causing the plot to clear or not display properly
+- Allow addition of new trend plot signals (i.e. from calculations) without clearing the plot
+### Security
+- 
+
+## [Unreleased]
+These items have been completed but not yet released in a new version.
+
+## [2.0.1] - 2020-07-22
+### Changed
+- Calculate pump dP instead of relying on the dP meter
+- Add the mixing valve to the startup values
+
+## [2.0.0] - 2020-06-24
+### Changed
+- Calculate HXer dP instead of using the measurement due to range
+- Shrink as needed to fit all content on to one screen
+- Update the PFD UI and labels
+- Re-label water valve control for the mixing cooler valve control
+- Swapped slot 3 9219 for a 9216 for more RTD channels
+- Updated the configuration and re-deployed shared variables for the 9216
+- Updated the 'Read shared variables' funciton for two additional RTD signals
+- Removed 1.5 hp pump outlet temp from temp alert list b/c not connect
+
+## [1.8.0] - 2020-01-08
+### Added
+- Second plot showing the operating point of the 1.5 hp Magnepump
+- Calculations for 1.5 hp Magnepump curve operating point
+- 1.5 hp Pump signals to default plot axes lists
+- 1.5 hp Pump head-flow curve text file
+- Project "Conditional Disable" symbol "RT_CONNECTION" as either "CONNECTED" or "DISCONNECTED" (set manually) to allow for simulated operation during development
+- Last relay module to read array
+- Automation of the pressure trim valve to avoid risk of overpressure on heating
+- Automation of the vent valve to avoid risk of overpressure on heating
+### Changed
+- Assign startup valve commands based on first read of feedback signals rather than static values
+- Main pump pressure difference label to "7.5 hp Pump dP [psid]" to avoid shadowing 1.5 pump dP in calculations
+- Moved most controls to the left-hand side outside the tabbed area
+
+## [1.7.1] - 2019-12-13
+Most recent stable version
